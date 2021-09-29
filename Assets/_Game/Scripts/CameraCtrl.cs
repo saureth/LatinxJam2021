@@ -8,6 +8,7 @@ public class CameraCtrl : MonoBehaviour
     public bool secondApproach;
     public Transform cameraGoal;
     public Transform cameraTransform;
+    public bool triggered = false;
 
     [Header("Mixed stuff")]
     public float cameraMovSpeed = 1.0f;
@@ -19,14 +20,9 @@ public class CameraCtrl : MonoBehaviour
 
     void Start()
     {
-        if(firstApproach){
+        if(firstApproach && triggered){
             StartCoroutine(MoveCameraToGoal());
         }
-    }
-
-    void Update()
-    {
-            
     }
 
     private IEnumerator MoveCameraToGoal(){
