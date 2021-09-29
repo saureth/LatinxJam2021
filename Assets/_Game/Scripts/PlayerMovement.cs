@@ -26,8 +26,7 @@ public class PlayerMovement : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
         if(!!canMove){
-            transform.Translate(new Vector3(0, 0, verticalInput*movementSpeed * Time.deltaTime));
-            transform.Rotate(new Vector3(0, horizontalInput * rotationSpeed * Time.deltaTime, 0));
+            transform.Translate(new Vector3(horizontalInput * rotationSpeed * Time.deltaTime, 0, verticalInput*movementSpeed * Time.deltaTime));
         }        
     }
     
