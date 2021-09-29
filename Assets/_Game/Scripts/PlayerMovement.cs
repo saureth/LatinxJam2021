@@ -27,8 +27,10 @@ public class PlayerMovement : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");        
         if(!!canMove && (horizontalInput!= 0f || verticalInput!= 0f)){
+            Quaternion q = transform.rotation;
             rotation = new Vector3 (horizontalInput,0,verticalInput);
             transform.forward = rotation.normalized;
+            transform.rotation = Quaternion.Lerp(q, transform.rotation, 5 * Time.deltaTime);
             transform.Translate (Vector3.forward * movementSpeed * Time.deltaTime );
         }
     }
