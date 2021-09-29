@@ -5,8 +5,6 @@ using UnityEngine;
 public class CameraCtrl : MonoBehaviour
 {
     public static CameraCtrl singleton;
-
-    public Transform cameraInitialPos;
     public Transform cameraTransform;
     public bool triggered = false;
 
