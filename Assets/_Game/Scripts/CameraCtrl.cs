@@ -6,9 +6,6 @@ public class CameraCtrl : MonoBehaviour
 {
     public static CameraCtrl singleton;
 
-    public bool firstApproach;
-    public bool secondApproach;
-    public Transform cameraGoal;
     public Transform cameraInitialPos;
     public Transform cameraTransform;
     public bool triggered = false;
@@ -19,6 +16,7 @@ public class CameraCtrl : MonoBehaviour
 
     [Header("Second Approach stuff")]
     public float rouletteShowingTime= 2f;
+    public GameObject roulettePanel;
 
     void Awake(){
         if(singleton == null){
@@ -41,8 +39,10 @@ public class CameraCtrl : MonoBehaviour
     private IEnumerator ShowRoulette(){
         PlayerMovement.singleton.canMove = false;
         Debug.Log("Mostrar RenderTexture de la ruleta en una RawImage");
+        roulettePanel.SetActive(true);
         yield return new WaitForSeconds(rouletteShowingTime);
         Debug.Log("Dejar de mostrar RenderTexture de la ruleta en una RawImage");
+        roulettePanel.SetActive(false);
         PlayerMovement.singleton.canMove = true;
     }
 
