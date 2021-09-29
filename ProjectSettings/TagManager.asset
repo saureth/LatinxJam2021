@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Roulette
   - DoorTrigger
+  - RouletteCamera
   layers:
   - Default
   - TransparentFX

@@ -34,8 +34,15 @@ public class CameraCtrl : MonoBehaviour
     void Update()
     {
         if(triggered){
-            Debug.Log("Mostrar RenderTexture de la ruleta en una RawImage");
+            StartCoroutine(ShowRoulette());
+            triggered = false;
         }
+    }
+
+    private IEnumerator ShowRoulette(){
+        Debug.Log("Mostrar RenderTexture de la ruleta en una RawImage");
+        yield return new WaitForSeconds(1f);
+        Debug.Log("Dejar de mostrar RenderTexture de la ruleta en una RawImage");
     }
 
 }
