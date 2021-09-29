@@ -5,13 +5,15 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float movementSpeed = 1f;
+    public float rotationSpeed = 1f;
     private float horizontalInput = 0f;
     private float verticalInput = 0f;
 
     void Update(){
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
-        transform.Translate(new Vector3(horizontalInput, 0, verticalInput) * (movementSpeed * Time.deltaTime));
+        transform.Translate(new Vector3(0, 0, verticalInput) * (movementSpeed * Time.deltaTime));
+        transform.Rotate(new Vector3(0, horizontalInput * rotationSpeed * Time.deltaTime, 0));
     }
     
 }
