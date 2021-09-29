@@ -304,8 +304,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98fea2ea1e4d11b45b9fd2b0730cb4d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstApproach: 1
+  secondApproach: 0
   cameraGoal: {fileID: 219510888}
-  cameraMovSpeed: 1
+  cameraTransform: {fileID: 795429873}
+  cameraMovSpeed: 0.85
+  cameraRotSpeed: 0.85
+  goalIsReached: 0
+  movementThreshold: 0.1
 --- !u!1001 &1411908296
 PrefabInstance:
   m_ObjectHideFlags: 0

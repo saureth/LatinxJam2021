@@ -7,18 +7,34 @@ public class CameraCtrl : MonoBehaviour
     public bool firstApproach;
     public bool secondApproach;
     public Transform cameraGoal;
+    public Transform cameraTransform;
+
+    [Header("Mixed stuff")]
     public float cameraMovSpeed = 1.0f;
+    public float cameraRotSpeed = 1.0f;
+
+    [Header("First Approach stuff")]
+    public bool goalIsReached = false;
+    public float movementThreshold = 1.0f;
 
     void Start()
     {
-        
+        if(firstApproach){
+            StartCoroutine(MoveCameraToGoal());
+        }
     }
 
     void Update()
     {
-        if(firstApproach){
-            transform.position = Vector3.Lerp(transform.position, cameraGoal.position, Time.deltaTime * cameraMovSpeed);
-            transform.rotation = Quaternion.Lerp (transform.rotation, cameraGoal.rotation, Time.deltaTime*1.0f);
-        }        
+            
+    }
+
+    private IEnumerator MoveCameraToGoal(){
+        while(!goalIsReached){
+            cameraTransform.position = Vector3.Lerp(cameraTransform.position, cameraGoal.position, Time.deltaTime * cameraMovSpeed);        
+            cameraTransform.rotation = Quaternion.Lerp (cameraTransform.rotation, cameraGoal.rotation, Time.deltaTime*cameraRotSpeed);
+            goalIsReached = Vector3.Distance(cameraGoal.position,cameraTransform.position) <= movementThreshold;
+            yield return new WaitForEndOfFrame();
+        }
     }
 }
