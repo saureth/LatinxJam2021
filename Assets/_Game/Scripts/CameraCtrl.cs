@@ -40,7 +40,7 @@ public class CameraCtrl : MonoBehaviour
         roulettePanel.SetActive(true);
         yield return new WaitForSeconds(rouletteShowingTime);
         Debug.Log("Dejar de mostrar RenderTexture de la ruleta en una RawImage");
-        BookCtrl.singleton.AddTextToList("Texto de prueba");
+        BookCtrl.singleton.AddTextToList(0);
         roulettePanel.SetActive(false);
         PlayerMovement.singleton.canMove = true;
     }

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BookCtrl : MonoBehaviour
 {
-
-    public List<string> texts;
+    public List<Phrase> allTexts;
+    public List<Phrase> currentTexts;
     public static BookCtrl singleton;
 
     private void Awake() {
@@ -15,11 +15,44 @@ public class BookCtrl : MonoBehaviour
         else{
             DestroyImmediate(this.gameObject);
         }
-        this.texts = new List<string>();
+        this.currentTexts = new List<Phrase>();
     }
 
-    public void AddTextToList(string textToAdd){
-        texts.Add(textToAdd);
+    public void AddTextToList(int phraseIndex){
+        currentTexts.Add(allTexts[phraseIndex]);
     }
 
+}
+
+[System.Serializable]
+public class Phrase {
+    
+    [SerializeField]
+    private string spanishPhrase;
+    [SerializeField]
+    private string englishPhrase;
+
+    public Phrase(){
+    }
+
+    public Phrase(string spanishText, string englishText){
+        this.spanishPhrase = spanishText;
+        this.englishPhrase = englishText;
+    }
+
+    public string getSpanishPhrase(){
+        return this.spanishPhrase;
+    }
+
+    public void setSpanishPhrase(string newSpanishPhrase){
+        this.spanishPhrase = newSpanishPhrase;
+    }
+
+    public string getEnglishPhrase(){
+        return this.englishPhrase;
+    }
+
+    public void setEnglishPhrase(string newEnglishPhrase){
+        this.englishPhrase = newEnglishPhrase;
+    }
 }
