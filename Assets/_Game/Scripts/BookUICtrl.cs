@@ -5,21 +5,15 @@ using UnityEngine.UI;
 
 public class BookUICtrl : MonoBehaviour
 {
-    public GameObject panel;
     public Text leftLeafUI;
     public Text rightLeafUI;
     public static BookUICtrl singleton;
-    public List<string> textList;
-    public int phraseAmountPerPage = 3;
     public int amountOfPages = 0;
     public int currentPage;
-    public int currentLeftPhrases = 0;
-    public int currentRightPhrases = 0;
-    public string leftLeaftText;
-    public string rightLeafText;
+    public Animator animLibro;
 
-    private void Awake() {
-        currentPage = amountOfPages;
+    private void Awake() 
+    {
         if(singleton == null){
             singleton = this;
         }
@@ -28,96 +22,82 @@ public class BookUICtrl : MonoBehaviour
         }
     }
 
-    public void addTextToBook(string text){
-        //longitud antes es %6 == 0 -> nueva página y escribir en izquierda
-        if(textList.Count % (phraseAmountPerPage *2) == 0){
-            //aumenta páginas
-            amountOfPages++;
-            leftLeaftText = text;
-            rightLeafText = "";
-            currentLeftPhrases = 1;
-            currentRightPhrases = 0;
-        }
-        // longitud antes %6 != 0 -> calcular izquierda o derecha
-        else {
-            // frases a izquierda %3 ==0 -> añadir a lo ya escrito en derecha 
-            if(currentLeftPhrases % phraseAmountPerPage == 0){
-                currentRightPhrases++;
-                rightLeafText += text;
+    public void ActualizarTexto()
+	{
+        rightLeafUI.text = "";
+        leftLeafUI.text = "";
+        int inicial = 6 * currentPage;
+        for (int i = 0; i < 3; i++)
+        {
+            if (BookCtrl.singleton.currentTexts.Count > inicial + i)
+            {
+                leftLeafUI.text = leftLeafUI.text + BookCtrl.singleton.currentTexts[inicial + i].GetPhrase() + "\n";
             }
-            // frases a izquierda %3 != 0 -> añadir a lo ya escrito en izquierda
-            else {
-                currentLeftPhrases++;
-                leftLeaftText += text;
+            if (BookCtrl.singleton.currentTexts.Count > 3 + inicial + i)
+            {
+                rightLeafUI.text = rightLeafUI.text + BookCtrl.singleton.currentTexts[3 + inicial + i].GetPhrase() + "\n";
             }
         }
-        // Siempre, al final, añadir texto a la lista
-        textList.Add(text);
-        // Se resetea la página actual a la última
-        currentPage = amountOfPages;
-    }
+	}
 
-    public void ShowBookUI(){
-        this.panel.SetActive(true);
+    public void ShowHideBook()
+	{
+		if (animLibro.GetBool("abierto"))
+		{
+            CloseBook();
+		}
+		else
+		{
+            ShowBookUI();
+		}
+	}
+
+    public void ShowBookUI()
+    {
+        animLibro.SetBool("abierto", true);
+        animLibro.gameObject.SetActive(true);
         PlayerMovement.singleton.canMove = false;
-        leftLeafUI.text = leftLeaftText;
-        rightLeafUI.text = rightLeafText;
+        ActualizarTexto();
     }
 
-    public void CloseBook(){
-        this.panel.SetActive(false);
+    public void CloseBook()
+    {
+        animLibro.SetBool("abierto", false);
         PlayerMovement.singleton.canMove = true;
+        StartCoroutine(OcultarModelo());
+    }
+
+
+    IEnumerator OcultarModelo()
+    {
+        yield return new WaitForSeconds(2f);
+        animLibro.gameObject.SetActive(false);
     }
 
     public void PageUp(){
+        amountOfPages = Mathf.FloorToInt((BookCtrl.singleton.currentTexts.Count - 1) / 6f);
         // Si la página actual está entre 1 y la penúltima puede subir página, de resto no haga nada   
-        if( currentPage >= 1 && currentPage < amountOfPages ){
+        if(currentPage < amountOfPages){
             currentPage++;
             //Mostrar página deseada
-            showTextAtPage(currentPage);
+            StartCoroutine(Pasar());
         }
     }
 
     public void PageDown(){
         // Si la página actual está entre 2 y la última puede bajar página, de resto no haga nada
-        if( currentPage >= 2 && currentPage < amountOfPages ){
+        if( currentPage >= 1){
             currentPage--;
             //Mostrar página deseada
-            showTextAtPage(currentPage);
+            StartCoroutine(Pasar());
         }
     }
 
-    private void showTextAtPage(int pageToShow){
-        // Crear sublista inicialmente vacía
-        List<string> pageList = new List<string>();
-        // de la lista general, el índice de inicio es 6 * páginaamostrar
-        int startIndex = pageToShow * phraseAmountPerPage*2;
-        // de la lista general, el último índice posible es el inicial +6 pues son 6 frases por página máximo
-        int endIndex = startIndex +6;
-        // Si el cálculo anterior dió más de la cantidad actual, entonces el índice final es el último de los actuales
-        if(endIndex > textList.Count){
-            endIndex = textList.Count-1;
-        }
-        // Añado entre 1 y 6 textos a la sublista
-        string text;
-        for (int i = startIndex; i < endIndex; i++)
-        {        
-            pageList.Add(textList[i]);
-        }
-        leftLeaftText ="";
-        rightLeafText ="";
-        for (int i = 0; i < pageList.Count; i++)
-        {
-            // Si el índice va entre 0 y 2 se añade texto a izquierda
-            if(i <= 3){
-                leftLeaftText += pageList[i];
-            }
-                // Si el índice va entre 3 y 6 se añade texto a derecha
-            else{
-                rightLeafText += pageList[i];
-            }
-        }        
-        leftLeafUI.text = leftLeaftText;
-        rightLeafUI.text = rightLeafText;
+    IEnumerator Pasar()
+	{
+        
+        animLibro.SetTrigger("pasar");
+        yield return new WaitForSeconds(1f);
+        ActualizarTexto();
     }
 }

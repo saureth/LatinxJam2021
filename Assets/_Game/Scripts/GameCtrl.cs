@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class GameCtrl : MonoBehaviour
 {
-    public static GameCtrl singleton; 
-    public Transform cameraTransform;
-    public bool eventTriggered = false;
+    public static GameCtrl  singleton; 
+    public Transform        cameraTransform;
+    public int              idioma;
 
     [Header("Roulette control stuff")]
-    public float rouletteShowingTime= 2f;
-    public GameObject roulettePanel;
+    public float            rouletteShowingTime= 2f;
+    public GameObject       roulettePanel;
 
-    void Awake(){
-        if(singleton == null){
+    void Awake()
+    {
+        if(singleton == null)
+        {
             singleton = this;
         }
         else
@@ -22,20 +24,22 @@ public class GameCtrl : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        if(eventTriggered){
-            StartCoroutine(ShowRoulette());
-            eventTriggered = false;
-        }
+
+    public void EntroPuerta()
+	{
+        StartCoroutine(ShowRoulette());
     }
 
-    private IEnumerator ShowRoulette(){
+    private IEnumerator ShowRoulette()
+    {
         PlayerMovement.singleton.canMove = false;
-        roulettePanel.SetActive(true);
+        //roulettePanel.SetActive(true);
+        ////////////////////////////////////////// Implementar sistema de "Aventuras"
         yield return new WaitForSeconds(rouletteShowingTime);
-        roulettePanel.SetActive(false);
+        //roulettePanel.SetActive(false);
         PlayerMovement.singleton.canMove = true;
+        Phrase frase = new Phrase("Hola mundo", "Hello world");
         BookCtrl.singleton.AddTextToList(0);
+        BookUICtrl.singleton.ShowBookUI();
     }
 }
