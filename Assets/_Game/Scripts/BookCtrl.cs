@@ -21,6 +21,11 @@ public class BookCtrl : MonoBehaviour
     public void AddTextToList(int phraseIndex){
         currentTexts.Add(allTexts[phraseIndex]);
     }
+    public void AddTextToList(string spanish, string english){
+        Phrase nPhr = new Phrase(spanish,english);
+        allTexts.Add(nPhr);
+        currentTexts.Add(nPhr);
+    }
 
 }
 
