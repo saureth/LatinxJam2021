@@ -56,5 +56,13 @@ public class BookUICtrl : MonoBehaviour
 
     public void ShowBookUI(){
         this.panel.SetActive(true);
+        PlayerMovement.singleton.canMove = false;
+        leftLeafUI.text = leftLeaftText;
+        rightLeafUI.text = rightLeafText;
+    }
+
+    public void CloseBook(){
+        this.panel.SetActive(false);
+        PlayerMovement.singleton.canMove = true;
     }
 }
