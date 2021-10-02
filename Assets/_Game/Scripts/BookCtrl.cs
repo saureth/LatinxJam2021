@@ -7,7 +7,6 @@ public class BookCtrl : MonoBehaviour
     public List<Phrase> allTexts;
     public List<Phrase> currentTexts;
     public static BookCtrl singleton;
-    public bool isSpanishLang = true;
 
     private void Awake() {
         if(singleton == null){
@@ -16,20 +15,21 @@ public class BookCtrl : MonoBehaviour
         else{
             DestroyImmediate(this.gameObject);
         }
-        this.currentTexts = new List<Phrase>();
     }
-
     public void AddTextToList(int phraseIndex){
         Phrase nPhr = allTexts[phraseIndex];
         currentTexts.Add(nPhr);
-        BookUICtrl.singleton.addTextToBook(isSpanishLang ? nPhr.getSpanishPhrase() : nPhr.getEnglishPhrase());
     }
 
     public void AddTextToList(string spanish, string english){
         Phrase nPhr = new Phrase(spanish,english);
         allTexts.Add(nPhr);
         currentTexts.Add(nPhr);
-        BookUICtrl.singleton.addTextToBook(isSpanishLang ? nPhr.getSpanishPhrase() : nPhr.getEnglishPhrase());
+    }
+
+    public void AddTextToList(Phrase f)
+    {
+        AddTextToList(f.GetSpanishPhrase(), f.GetEnglishPhrase());
     }
 
 }
@@ -50,19 +50,24 @@ public class Phrase {
         this.englishPhrase = englishText;
     }
 
-    public string getSpanishPhrase(){
+    public string GetPhrase()
+	{
+        return GameCtrl.singleton.idioma == 0 ? GetSpanishPhrase() : GetEnglishPhrase();
+	}
+
+    public string GetSpanishPhrase(){
         return this.spanishPhrase;
     }
 
-    public void setSpanishPhrase(string newSpanishPhrase){
+    public void SetSpanishPhrase(string newSpanishPhrase){
         this.spanishPhrase = newSpanishPhrase;
     }
 
-    public string getEnglishPhrase(){
+    public string GetEnglishPhrase(){
         return this.englishPhrase;
     }
 
-    public void setEnglishPhrase(string newEnglishPhrase){
+    public void SetEnglishPhrase(string newEnglishPhrase){
         this.englishPhrase = newEnglishPhrase;
     }
 }
