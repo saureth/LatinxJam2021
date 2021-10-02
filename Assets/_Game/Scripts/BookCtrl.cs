@@ -7,6 +7,7 @@ public class BookCtrl : MonoBehaviour
     public List<Phrase> allTexts;
     public List<Phrase> currentTexts;
     public static BookCtrl singleton;
+    public bool isSpanishLang = true;
 
     private void Awake() {
         if(singleton == null){
@@ -19,7 +20,16 @@ public class BookCtrl : MonoBehaviour
     }
 
     public void AddTextToList(int phraseIndex){
-        currentTexts.Add(allTexts[phraseIndex]);
+        Phrase nPhr = allTexts[phraseIndex];
+        currentTexts.Add(nPhr);
+        BookUICtrl.singleton.addTextToBook(isSpanishLang ? nPhr.getSpanishPhrase() : nPhr.getEnglishPhrase());
+    }
+
+    public void AddTextToList(string spanish, string english){
+        Phrase nPhr = new Phrase(spanish,english);
+        allTexts.Add(nPhr);
+        currentTexts.Add(nPhr);
+        BookUICtrl.singleton.addTextToBook(isSpanishLang ? nPhr.getSpanishPhrase() : nPhr.getEnglishPhrase());
     }
 
 }

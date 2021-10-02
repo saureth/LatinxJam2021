@@ -8,7 +8,7 @@ public class DoorTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other){
         if(other.gameObject.CompareTag(tagToCompare)){
-            CameraCtrl.singleton.triggered = true;
+            GameCtrl.singleton.eventTriggered = true;
             Destroy(this.gameObject);
         }
     }
