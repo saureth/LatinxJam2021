@@ -7,6 +7,33 @@ public class Personalizar : MonoBehaviour
     public Materializador materialPrincipal;
     public Materializador materialOjos;
     public Materializador materialNariz;
+    public MallasCambiantes mallasOrejas;
+    public MallasCambiantes mallasOjos;
+    public MallasCambiantes mallasColas;
+
+    private void Start()
+	{
+        mallasOrejas.Actualizar();
+        mallasOjos.Actualizar();
+    }
+
+    [ContextMenu("Cambiar Ojos")]
+    public void CambiarMallaOjos()
+    {
+        mallasOjos.Siguiente();
+    }
+
+    [ContextMenu("Cambiar Colas")]
+    public void CambiarMallaColas()
+    {
+        mallasColas.Siguiente();
+    }
+
+    [ContextMenu("Cambiar Orejas")]
+    public void CambiarMallaOrejas()
+    {
+        mallasOrejas.Siguiente();
+    }
 
     [ContextMenu("Cambiar material ppal")]
     public void CambiarMaterialPrincipal()
