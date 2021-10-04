@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private float horizontalInput = 0f;
     private float verticalInput = 0f;
     public Vector3 rotation;
+    Animator playerAnimator;
 
     void Awake(){
         if(singleton == null){
@@ -21,14 +22,14 @@ public class PlayerMovement : MonoBehaviour
         {
             DestroyImmediate(this.gameObject);
         }
+        playerAnimator = this.GetComponentsInChildren<Animator>()[0];
     }
 
     void Update(){
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");        
         if(!!canMove && (horizontalInput!= 0f || verticalInput!= 0f)){
-            Animator anim = this.GetComponentsInChildren<Animator>()[0];
-            anim.SetFloat("velocidad",1f*(horizontalInput*horizontalInput + verticalInput*verticalInput));
+            playerAnimator.SetFloat("velocidad",1f*(horizontalInput*horizontalInput + verticalInput*verticalInput));
             Quaternion q = transform.rotation;
             rotation = new Vector3 (horizontalInput,0,verticalInput);
             transform.forward = rotation.normalized;
