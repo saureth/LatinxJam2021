@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
 
     public float movementSpeed = 1f;
     public float rotationSpeed = 1f;
-    public bool canMove = true;
     private float horizontalInput = 0f;
     private float verticalInput = 0f;
     public Vector3 rotation;
@@ -28,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     void Update(){
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");        
-        if(!!canMove && (horizontalInput!= 0f || verticalInput!= 0f)){
+        if(!GameCtrl.singleton.pausado && (horizontalInput!= 0f || verticalInput!= 0f)){
             playerAnimator.SetFloat("velocidad",1f*(horizontalInput*horizontalInput + verticalInput*verticalInput));
             Quaternion q = transform.rotation;
             rotation = new Vector3 (horizontalInput,0,verticalInput);

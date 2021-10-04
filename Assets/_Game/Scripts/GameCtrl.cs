@@ -8,6 +8,8 @@ public class GameCtrl : MonoBehaviour
     public Transform        cameraTransform;
     public int              idioma;
 
+    public bool pausado = false;
+
     [Header("Roulette control stuff")]
     public float            rouletteShowingTime= 2f;
     public GameObject       roulettePanel;
@@ -32,14 +34,14 @@ public class GameCtrl : MonoBehaviour
 
     private IEnumerator ShowRoulette()
     {
-        PlayerMovement.singleton.canMove = false;
+        GameCtrl.singleton.pausado = true;
         //roulettePanel.SetActive(true);
         ////////////////////////////////////////// Implementar sistema de "Aventuras"
         yield return new WaitForSeconds(rouletteShowingTime);
         //roulettePanel.SetActive(false);
-        PlayerMovement.singleton.canMove = true;
         Phrase frase = new Phrase("Hola mundo", "Hello world");
         BookCtrl.singleton.AddTextToList(0);
         BookUICtrl.singleton.ShowBookUI();
+        GameCtrl.singleton.pausado = false;
     }
 }
