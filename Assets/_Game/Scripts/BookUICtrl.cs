@@ -56,14 +56,14 @@ public class BookUICtrl : MonoBehaviour
     {
         animLibro.SetBool("abierto", true);
         animLibro.gameObject.SetActive(true);
-        PlayerMovement.singleton.canMove = false;
+        GameCtrl.singleton.pausado = true;
         ActualizarTexto();
     }
 
     public void CloseBook()
     {
         animLibro.SetBool("abierto", false);
-        PlayerMovement.singleton.canMove = true;
+        GameCtrl.singleton.pausado = false;
         StartCoroutine(OcultarModelo());
     }
 
@@ -94,8 +94,7 @@ public class BookUICtrl : MonoBehaviour
     }
 
     IEnumerator Pasar()
-	{
-        
+	{        
         animLibro.SetTrigger("pasar");
         yield return new WaitForSeconds(1f);
         ActualizarTexto();
