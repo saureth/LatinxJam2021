@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class Procedural : MonoBehaviour
 {
@@ -10,7 +11,11 @@ public class Procedural : MonoBehaviour
     public int[,] matrizBloques;
     public Vector2 distancias;
     public Transform jugador;
+    public Transform posLlave;
     public GameObject cuarto;
+    public string nombre;
+    public int nombreSemilla;
+    public System.Random r;
 
     void Start(){
         crearMundo();
@@ -23,6 +28,7 @@ public class Procedural : MonoBehaviour
     }
 
     public void crearMundo(){
+        GeneradorSemilla();
         matrizJuego = new int[x, z];
         matrizBloques = new int[x, z];
         TrazarRuta();
@@ -31,8 +37,8 @@ public class Procedural : MonoBehaviour
     }
 
     void TrazarRuta(){
-        int puntoInicio = Aleatorio(x);   //acá usariamos la semilla CAMBIAR     
-        int puntoFinal = Aleatorio(x);
+        int puntoInicio = Aleatorio(0, x);   //acá usariamos la semilla CAMBIAR     
+        int puntoFinal = Aleatorio(0, x);
 
         int[] puntoFlotante = { puntoInicio, z - 1 };
         while (!(puntoFlotante[0] == puntoFinal && puntoFlotante[1] == 0)){ //sigo moviendo hasta encontrar la meta
@@ -41,7 +47,7 @@ public class Procedural : MonoBehaviour
             do
             {
                 repetir = false;
-                movimiento = Random.Range(1, 4);
+                movimiento = Aleatorio(1, 4);
 
                 if (movimiento == 1) { //movimiento a la derecha
                     puntoFlotante[0]++;
@@ -70,7 +76,7 @@ public class Procedural : MonoBehaviour
             matrizJuego[puntoFlotante[0], puntoFlotante[1]] = 3;
         }
 
-        int[] llave = { Aleatorio(x), Aleatorio(z-1) }; //genero una posicion para la llave
+        int[] llave = { Aleatorio(0, x), Aleatorio(0, z-1) }; //genero una posicion para la llave
         matrizJuego[llave[0], llave[1]] = 4;
 
         if (ValorHabitaciones(llave[0],llave[1])==0){//creo habitacion con llave
@@ -98,7 +104,8 @@ public class Procedural : MonoBehaviour
         matrizJuego[puntoInicio, z - 1] = 1;
         matrizJuego[puntoFinal, 0] = 2;
 
-        jugador.position = new Vector3(puntoInicio * distancias.x, 0.5f, (z - 1) * distancias.y);
+        jugador.position = new Vector3(puntoInicio * distancias.x, 0.5f, (z - 1) * distancias.y); //llevo al jugador a la habitacion inicial
+        posLlave.position = new Vector3(llave[0] * distancias.x, 0.5f, llave[1] * distancias.y);
     }
 
     private void OnDrawGizmos(){
@@ -162,8 +169,18 @@ public class Procedural : MonoBehaviour
         return 1;
     }
 
-    public static int Aleatorio(int x){
-        return Random.Range(0, x);
+
+    public void GeneradorSemilla() {
+        for (int i = 0; i < nombre.Length; i++)
+        {
+            nombreSemilla += (int)nombre[i];
+        }
+        r = new System.Random(nombreSemilla);
+    }
+
+    public int Aleatorio(int x, int y){
+        //int random = new Random();
+        return r.Next(x, y);
     }
 }
 
