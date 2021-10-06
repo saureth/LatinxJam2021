@@ -8,6 +8,8 @@ public class GameCtrl : MonoBehaviour
     public Transform        cameraTransform;
     public int              idioma;
 
+    public bool cardUsed = false;
+
     public bool pausado = false;
 
     [Header("Roulette control stuff")]
@@ -35,12 +37,9 @@ public class GameCtrl : MonoBehaviour
     private IEnumerator ShowRoulette()
     {
         GameCtrl.singleton.pausado = true;
-        //roulettePanel.SetActive(true);
-        ////////////////////////////////////////// Implementar sistema de "Aventuras"
-        yield return new WaitForSeconds(rouletteShowingTime);
-        //roulettePanel.SetActive(false);
-        Phrase frase = new Phrase("Hola mundo", "Hello world");
-        BookCtrl.singleton.AddTextToList(0);
+        this.cardUsed = true;
+        DeckUICtrl.singleton.ShowDeckUI();
+        yield return new WaitUntil(()=>cardUsed ==false);
         BookUICtrl.singleton.ShowBookUI();
         GameCtrl.singleton.pausado = false;
     }

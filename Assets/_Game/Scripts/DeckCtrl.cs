@@ -10,6 +10,8 @@ public class DeckCtrl : MonoBehaviour
     public float timeForFreeze;
     public float timeForInvisible;
 
+    public Adventure lastCard;
+
     private void Awake() {
         if(singleton ==null){
             singleton = this;
@@ -34,30 +36,32 @@ public class DeckCtrl : MonoBehaviour
         }  
     }
 
-    public Adventure GetAdventureCard(){
+    public void TriggerAdventureCard(){
         Adventure dequeuedCard = adventureDeck[0];
         adventureDeck.RemoveAt(0);
         adventureDeck.Add(dequeuedCard);
-        return dequeuedCard;
+        lastCard = dequeuedCard;
+        dequeuedCard.myEvent.Invoke();
+        Debug.Log("Añado a libro: " + dequeuedCard.phrase);
+        GameCtrl.singleton.cardUsed = false;
     }
 
     public void CreateEnemyAtRoom(){
-
+        BookCtrl.singleton.AddTextToList(lastCard.phrase);
     }
-
     
     public void FreezeEnemies(){
-        
+        BookCtrl.singleton.AddTextToList(lastCard.phrase);
     }
 
     public void BecomeInvisible(){
-        
+        BookCtrl.singleton.AddTextToList(lastCard.phrase);
     }
 
     public void KeyRoomVisible(){
-        
+        BookCtrl.singleton.AddTextToList(lastCard.phrase);
     }
     public void DoorRoomVisible(){
-        
+        BookCtrl.singleton.AddTextToList(lastCard.phrase);   
     }
 }
