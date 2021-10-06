@@ -1832,6 +1832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 1126776735}
   idioma: 0
+  cardUsed: 0
   pausado: 0
   rouletteShowingTime: 0
   roulettePanel: {fileID: 0}
@@ -2466,8 +2467,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 685248328}
-        m_MethodName: ShowHideBook
+      - m_Target: {fileID: 685248329}
+        m_MethodName: ChooseCard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3089,8 +3090,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 685248328}
-        m_MethodName: PageDown
+      - m_Target: {fileID: 685248329}
+        m_MethodName: ChooseCard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6814,6 +6815,13 @@ MonoBehaviour:
           m_CallState: 2
   timeForFreeze: 5
   timeForInvisible: 5
+  lastCard:
+    phrase:
+      spanishPhrase: 
+      englishPhrase: 
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1411581221
 GameObject:
   m_ObjectHideFlags: 0
@@ -10566,8 +10574,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 685248328}
-        m_MethodName: PageUp
+      - m_Target: {fileID: 685248329}
+        m_MethodName: ChooseCard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
