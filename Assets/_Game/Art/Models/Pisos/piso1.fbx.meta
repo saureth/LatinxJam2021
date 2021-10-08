@@ -3,7 +3,12 @@ guid: 4c4402dabb4460f4cb1087caf513df83
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pisoyprops
+    second: {fileID: 2100000, guid: 4228eb56ade2cbd44b59889ec9667495, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
