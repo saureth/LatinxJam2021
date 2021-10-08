@@ -474,44 +474,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 517340535, guid: 8a0a26d3398b70c41a674c72532b705a, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1296965740558350768, guid: 8a0a26d3398b70c41a674c72532b705a,
-        type: 3}
-      propertyPath: aventura.phrase.englishPhrase
-      value: 'I feel than an Enemy '
-      objectReference: {fileID: 0}
-    - target: {fileID: 1296965740558350768, guid: 8a0a26d3398b70c41a674c72532b705a,
-        type: 3}
-      propertyPath: aventura.phrase.spanishPhrase
-      value: Siento que aparece un enemigo
-      objectReference: {fileID: 0}
-    - target: {fileID: 1296965740558350768, guid: 8a0a26d3398b70c41a674c72532b705a,
-        type: 3}
-      propertyPath: aventura.myEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1296965740558350768, guid: 8a0a26d3398b70c41a674c72532b705a,
-        type: 3}
-      propertyPath: aventura.myEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1296965740558350768, guid: 8a0a26d3398b70c41a674c72532b705a,
-        type: 3}
-      propertyPath: aventura.myEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1296965740558350770, guid: 8a0a26d3398b70c41a674c72532b705a,
         type: 3}
       propertyPath: m_Name
       value: EnemyPrefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 1296965740558350770, guid: 8a0a26d3398b70c41a674c72532b705a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1296965740558350771, guid: 8a0a26d3398b70c41a674c72532b705a,
         type: 3}
@@ -567,31 +533,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1296965741768262131, guid: 8a0a26d3398b70c41a674c72532b705a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.52
-      objectReference: {fileID: 0}
-    - target: {fileID: 1296965741768262131, guid: 8a0a26d3398b70c41a674c72532b705a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 6230429378281800388, guid: 8a0a26d3398b70c41a674c72532b705a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6718594590558214270, guid: 8a0a26d3398b70c41a674c72532b705a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.59
-      objectReference: {fileID: 0}
-    - target: {fileID: 6718594590558214270, guid: 8a0a26d3398b70c41a674c72532b705a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.69
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a0a26d3398b70c41a674c72532b705a, type: 3}
