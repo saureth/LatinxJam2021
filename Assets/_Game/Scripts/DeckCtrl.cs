@@ -19,11 +19,16 @@ public class DeckCtrl : MonoBehaviour
         else{
             DestroyImmediate(this.gameObject);
         }
+        
+    }
+
+	private IEnumerator Start()
+	{
+        yield return new WaitForSeconds(0.5f);
         Shuffle();
     }
 
-
-    private void Shuffle()
+	private void Shuffle()
     {  
         int n = adventureDeck.Count;
         Adventure value;
