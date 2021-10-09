@@ -46,27 +46,26 @@ public class DeckCtrl : MonoBehaviour
         adventureDeck.RemoveAt(0);
         adventureDeck.Add(dequeuedCard);
         lastCard = dequeuedCard;
-        dequeuedCard.myEvent.Invoke();
         Debug.Log("Añado a libro: " + dequeuedCard.phrase);
+        BookCtrl.singleton.AddTextToList(lastCard.phrase);
         GameCtrl.singleton.cardUsed = false;
     }
 
+    public void TriggerLastCardEvent(){
+        lastCard.myEvent.Invoke();
+    }
+
     public void CreateEnemyAtRoom(){
-        BookCtrl.singleton.AddTextToList(lastCard.phrase);
     }
     
     public void FreezeEnemies(){
-        BookCtrl.singleton.AddTextToList(lastCard.phrase);
     }
 
     public void BecomeInvisible(){
-        BookCtrl.singleton.AddTextToList(lastCard.phrase);
     }
 
     public void KeyRoomVisible(){
-        BookCtrl.singleton.AddTextToList(lastCard.phrase);
     }
     public void DoorRoomVisible(){
-        BookCtrl.singleton.AddTextToList(lastCard.phrase);   
     }
 }
