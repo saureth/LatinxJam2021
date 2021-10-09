@@ -12,6 +12,8 @@ public class BookUICtrl : MonoBehaviour
     public int currentPage;
     public Animator animLibro;
 
+    public bool bookActive = false;
+
     private void Awake() 
     {
         if(singleton == null){
@@ -56,14 +58,13 @@ public class BookUICtrl : MonoBehaviour
     {
         animLibro.SetBool("abierto", true);
         animLibro.gameObject.SetActive(true);
-        GameCtrl.singleton.pausado = true;
+        bookActive = true;
         ActualizarTexto();
     }
 
     public void CloseBook()
     {
         animLibro.SetBool("abierto", false);
-        GameCtrl.singleton.pausado = false;
         StartCoroutine(OcultarModelo());
     }
 
@@ -72,6 +73,7 @@ public class BookUICtrl : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         animLibro.gameObject.SetActive(false);
+        bookActive = false;
     }
 
     public void PageUp(){

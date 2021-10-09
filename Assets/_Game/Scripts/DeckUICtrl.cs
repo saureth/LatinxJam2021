@@ -17,7 +17,6 @@ public class DeckUICtrl : MonoBehaviour
 
     public void ShowDeckUI(){
         DeckPanel.SetActive(true);
-        GameCtrl.singleton.pausado = true;
     }
 
     public void ChooseCard(){
