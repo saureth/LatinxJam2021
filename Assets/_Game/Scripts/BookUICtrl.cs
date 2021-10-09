@@ -71,7 +71,7 @@ public class BookUICtrl : MonoBehaviour
 
     IEnumerator OcultarModelo()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         animLibro.gameObject.SetActive(false);
         bookActive = false;
     }
