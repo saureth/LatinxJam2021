@@ -15,8 +15,9 @@ public class PuertaFinal : MonoBehaviour
         singleton = this;
 	}
 
-	void Start()
+	IEnumerator Start()
     {
+		yield return new WaitForSeconds(0.1f);
         DestruirCosas();
     }
 
