@@ -22,6 +22,17 @@ public class Procedural : MonoBehaviour
     public int nombreSemilla;
     public System.Random r;
 
+    public static Procedural singleton;
+
+    private void Awake() {
+        if(singleton == null){
+            singleton = this;
+        }
+        else {
+            DestroyImmediate(this.gameObject);
+        }
+    }
+
     void Start(){
         crearMundo();
     }
