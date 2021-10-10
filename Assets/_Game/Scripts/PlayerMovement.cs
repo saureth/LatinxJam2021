@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     public VolumeProfile visibleProfile;
     public VolumeProfile invisibleProfile;
 
+    public bool playerIsInvisible = false;
+
     public float invisibleTime = 5f;
 
     void Awake(){
@@ -49,9 +51,11 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public IEnumerator MakeInvisible(){
+        playerIsInvisible = true;
         volume.profile = invisibleProfile;
         yield return new WaitForSeconds(invisibleTime);
         volume.profile = visibleProfile;
+        playerIsInvisible = false;    
     }
     
 }
