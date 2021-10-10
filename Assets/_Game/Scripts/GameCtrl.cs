@@ -40,7 +40,6 @@ public class GameCtrl : MonoBehaviour
         GameCtrl.singleton.pausado = true;
         DeckUICtrl.singleton.ShowDeckUI();
         yield return new WaitUntil(()=>cardUsed ==false);
-        BookUICtrl.singleton.ShowBookUI();
         yield return new WaitUntil(()=>BookUICtrl.singleton.bookActive ==false);
         GameCtrl.singleton.pausado = false;
         DeckCtrl.singleton.TriggerLastCardEvent();

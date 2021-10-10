@@ -42,13 +42,11 @@ public class DeckCtrl : MonoBehaviour
     }
 
     public void TriggerAdventureCard(){
-        Adventure dequeuedCard = adventureDeck[0];
+        lastCard = adventureDeck[0];
         adventureDeck.RemoveAt(0);
-        adventureDeck.Add(dequeuedCard);
-        lastCard = dequeuedCard;
-        Debug.Log("Añado a libro: " + dequeuedCard.phrase);
-        BookCtrl.singleton.AddTextToList(lastCard.phrase);
+        adventureDeck.Add(lastCard);
         GameCtrl.singleton.cardUsed = false;
+        BookCtrl.singleton.AddPhraseToBook(lastCard.phrase);
     }
 
     public void TriggerLastCardEvent(){
