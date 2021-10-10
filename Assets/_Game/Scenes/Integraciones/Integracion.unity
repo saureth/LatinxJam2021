@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -214,6 +214,18 @@ Transform:
   m_Father: {fileID: 1435649532}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &248275099 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7453948347630645230, guid: ee333f35987514b4daa2756c9d516218,
+    type: 3}
+  m_PrefabInstance: {fileID: 7453948347526549365}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &283579172 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7453948347796757585, guid: ee333f35987514b4daa2756c9d516218,
+    type: 3}
+  m_PrefabInstance: {fileID: 7453948347526549365}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &354616881
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,8 +755,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0.2
-    height: 0.2
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -755,7 +767,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 16
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: a91a92734a7fc7b499f37a260f4a051b, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -1246,6 +1258,16 @@ PrefabInstance:
       propertyPath: rightLeafUI
       value: 
       objectReference: {fileID: 2117613209}
+    - target: {fileID: 3070832860446735149, guid: 6693e251704d66840a3203bed835526b,
+        type: 3}
+      propertyPath: objetosLibro.Array.data[0]
+      value: 
+      objectReference: {fileID: 248275099}
+    - target: {fileID: 3070832860446735149, guid: 6693e251704d66840a3203bed835526b,
+        type: 3}
+      propertyPath: objetosLibro.Array.data[1]
+      value: 
+      objectReference: {fileID: 283579172}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6693e251704d66840a3203bed835526b, type: 3}
 --- !u!1001 &3583472361482898314
