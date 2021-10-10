@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -210,13 +210,14 @@ GameObject:
   - component: {fileID: 102298930}
   - component: {fileID: 102298932}
   - component: {fileID: 102298931}
+  - component: {fileID: 102298933}
   m_Layer: 5
   m_Name: Inicio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &102298930
 RectTransform:
   m_ObjectHideFlags: 0
@@ -276,6 +277,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 102298929}
   m_CullTransparentMesh: 0
+--- !u!114 &102298933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102298929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db51c4d824654c4981d55f21013b0a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &116805202
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,6 +468,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 102298933}
+        m_MethodName: SetLanguage
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &124859129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -578,6 +602,7 @@ GameObject:
   - component: {fileID: 170764616}
   - component: {fileID: 170764618}
   - component: {fileID: 170764617}
+  - component: {fileID: 170764619}
   m_Layer: 5
   m_Name: Text (1)
   m_TagString: Untagged
@@ -645,6 +670,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170764615}
   m_CullTransparentMesh: 0
+--- !u!114 &170764619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170764615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 570b77d93675fd843b50343264a92bfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frase:
+    spanishPhrase: '[EN NIVEL ES GENERADO AL AZAR BASADO EN EL NOMBRE INGRESADO]'
+    englishPhrase: '[THE LEVEL IS RANDOM GENERATED BASED IN YOUR NAME ENTERED]'
 --- !u!1 &352227803
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,6 +963,7 @@ GameObject:
   - component: {fileID: 419234180}
   - component: {fileID: 419234182}
   - component: {fileID: 419234181}
+  - component: {fileID: 419234183}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -990,6 +1031,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419234179}
   m_CullTransparentMesh: 0
+--- !u!114 &419234183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419234179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 570b77d93675fd843b50343264a92bfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frase:
+    spanishPhrase: ESCRIBA SU NOMBRE
+    englishPhrase: ENTER YOUR NAME
 --- !u!1 &497473829
 GameObject:
   m_ObjectHideFlags: 0
@@ -2465,6 +2521,17 @@ MonoBehaviour:
       - m_Target: {fileID: 2096152758}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 102298933}
+        m_MethodName: SetLanguage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
