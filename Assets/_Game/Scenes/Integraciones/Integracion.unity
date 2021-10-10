@@ -220,6 +220,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7453948347526549365}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &254874386 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 653260036, guid: 6693e251704d66840a3203bed835526b,
+    type: 3}
+  m_PrefabInstance: {fileID: 3070832860041458789}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &283579172 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7453948347796757585, guid: ee333f35987514b4daa2756c9d516218,
@@ -814,9 +826,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3583472360185123812, guid: c4785f651d0498e4fb436bec467517f9,
         type: 3}
+      propertyPath: volume
+      value: 
+      objectReference: {fileID: 254874386}
+    - target: {fileID: 3583472360185123812, guid: c4785f651d0498e4fb436bec467517f9,
+        type: 3}
+      propertyPath: invisibleTime
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3583472360185123812, guid: c4785f651d0498e4fb436bec467517f9,
+        type: 3}
       propertyPath: movementSpeed
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 3583472360185123812, guid: c4785f651d0498e4fb436bec467517f9,
+        type: 3}
+      propertyPath: visibleProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 10fc4df2da32a41aaa32d77bc913491c,
+        type: 2}
+    - target: {fileID: 3583472360185123812, guid: c4785f651d0498e4fb436bec467517f9,
+        type: 3}
+      propertyPath: invisibleProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 5aaf2b30a46c9ea47a0f9339b22e4f2d,
+        type: 2}
     - target: {fileID: 3583472360185123815, guid: c4785f651d0498e4fb436bec467517f9,
         type: 3}
       propertyPath: m_RootOrder
