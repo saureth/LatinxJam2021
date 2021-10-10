@@ -1284,9 +1284,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3583472360185123812, guid: c4785f651d0498e4fb436bec467517f9,
         type: 3}
+      propertyPath: volume
+      value: 
+      objectReference: {fileID: 653260036}
+    - target: {fileID: 3583472360185123812, guid: c4785f651d0498e4fb436bec467517f9,
+        type: 3}
       propertyPath: movementSpeed
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 3583472360185123812, guid: c4785f651d0498e4fb436bec467517f9,
+        type: 3}
+      propertyPath: visibleProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 10fc4df2da32a41aaa32d77bc913491c,
+        type: 2}
+    - target: {fileID: 3583472360185123812, guid: c4785f651d0498e4fb436bec467517f9,
+        type: 3}
+      propertyPath: invisibleProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 5aaf2b30a46c9ea47a0f9339b22e4f2d,
+        type: 2}
     - target: {fileID: 3583472360185123815, guid: c4785f651d0498e4fb436bec467517f9,
         type: 3}
       propertyPath: m_RootOrder
