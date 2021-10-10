@@ -60,6 +60,7 @@ public class DeckCtrl : MonoBehaviour
     }
 
     public void BecomeInvisible(){
+        StartCoroutine(PlayerMovement.singleton.MakeInvisible());
     }
 
     public void KeyRoomVisible(){

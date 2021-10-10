@@ -1,6 +1,8 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,6 +14,12 @@ public class PlayerMovement : MonoBehaviour
     private float verticalInput = 0f;
     public Vector3 rotation;
     Animator playerAnimator;
+
+    public Volume volume;
+    public VolumeProfile visibleProfile;
+    public VolumeProfile invisibleProfile;
+
+    public float invisibleTime = 5f;
 
     void Awake(){
         if(singleton == null){
@@ -38,6 +46,12 @@ public class PlayerMovement : MonoBehaviour
         else{
             playerAnimator.SetFloat("velocidad",0f);
         }
+    }
+
+    public IEnumerator MakeInvisible(){
+        volume.profile = invisibleProfile;
+        yield return new WaitForSeconds(invisibleTime);
+        volume.profile = visibleProfile;
     }
     
 }
