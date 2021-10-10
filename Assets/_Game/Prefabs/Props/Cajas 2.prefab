@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5526889289096972709}
   - component: {fileID: 8380638388804444400}
   - component: {fileID: 2618965502458517516}
+  - component: {fileID: 5025440581739656235}
+  - component: {fileID: 3316207295850048216}
   m_Layer: 0
   m_Name: Cajas 2
   m_TagString: Untagged
@@ -79,3 +81,29 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &5025440581739656235
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927561350888335400}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0538762, y: 1.5536166, z: 1.0177871}
+  m_Center: {x: 5.3261137, y: 0.77312875, z: -3.8640578}
+--- !u!65 &3316207295850048216
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927561350888335400}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9847261, y: 1.5536166, z: 0.92242926}
+  m_Center: {x: 4.2837863, y: 0.77312875, z: -3.5888095}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7884295708356876280}
   - component: {fileID: 6385223024151170427}
   - component: {fileID: 7976550206445868386}
+  - component: {fileID: 6981689942153661446}
   m_Layer: 0
   m_Name: Cajas 3
   m_TagString: Untagged
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &6981689942153661446
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4212327684520397540}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.6700773, y: 4.6120057, z: 2.2135582}
+  m_Center: {x: 8.554995, y: 2.2992961, z: 5.1547794}

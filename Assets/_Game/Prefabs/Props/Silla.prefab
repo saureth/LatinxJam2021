@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7619102704785696776}
   - component: {fileID: 9163670931213265166}
   - component: {fileID: 765498597954005627}
+  - component: {fileID: 1995644066719866556}
   m_Layer: 0
   m_Name: Silla
   m_TagString: Untagged
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1995644066719866556
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362996449046464616}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9999994, y: 3.3894215, z: 1.9999999}
+  m_Center: {x: -5.648687, y: 1.4142878, z: -12.204098}

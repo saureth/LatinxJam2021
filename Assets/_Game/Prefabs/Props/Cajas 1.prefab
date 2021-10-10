@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1021750603610180274}
   - component: {fileID: 1629204193533990917}
   - component: {fileID: 5563699841868120069}
+  - component: {fileID: 4472063535222698114}
   m_Layer: 0
   m_Name: Cajas 1
   m_TagString: Untagged
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &4472063535222698114
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741193206966684878}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.8826098, y: 3.6192784, z: 2.2135587}
+  m_Center: {x: 7.8800936, y: 1.8029318, z: 6.875475}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8197345670569870198}
   - component: {fileID: 5080400538465808987}
   - component: {fileID: 1510865824358175284}
+  - component: {fileID: 7610520388607951230}
   m_Layer: 0
   m_Name: Barra 1
   m_TagString: Untagged
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &7610520388607951230
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4622810901026296955}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.713185, y: 2.0116043, z: 2.235923}
+  m_Center: {x: -4.5430436, y: 1.0021229, z: -3.0545783}
