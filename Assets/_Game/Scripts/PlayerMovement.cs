@@ -35,6 +35,9 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.Lerp(q, transform.rotation, 5 * Time.deltaTime);
             transform.Translate (Vector3.forward * movementSpeed * Time.deltaTime );
         }
+        else{
+            playerAnimator.SetFloat("velocidad",0f);
+        }
     }
     
 }
