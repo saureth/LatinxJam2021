@@ -14,4 +14,15 @@ public class Habitación : MonoBehaviour
 			miniMapa.SetActive(true);
 		}
 	}
+
+	public void ActivarLlave()
+	{
+		miniMapa.GetComponent<SpriteRenderer>().color = Color.green;
+		miniMapa.SetActive(true);
+	}
+	public void ActivarPuerta()
+	{
+		miniMapa.GetComponent<SpriteRenderer>().color = Color.red;
+		miniMapa.SetActive(true);
+	}
 }
