@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 3070832859741487119}
   - component: {fileID: 3070832859741487116}
   m_Layer: 0
-  m_Name: --------- Game Managers
+  m_Name: Game Managers
   m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -387,6 +387,9 @@ MonoBehaviour:
   amountOfPages: 2
   currentPage: 0
   animLibro: {fileID: 0}
+  objetosLibro:
+  - {fileID: 0}
+  - {fileID: 0}
   bookActive: 0
 --- !u!114 &3070832860446735148
 MonoBehaviour:

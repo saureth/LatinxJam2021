@@ -11,6 +11,7 @@ public class BookUICtrl : MonoBehaviour
     public int amountOfPages = 0;
     public int currentPage;
     public Animator animLibro;
+    public GameObject[] objetosLibro;
 
     public bool bookActive = false;
 
@@ -82,6 +83,10 @@ public class BookUICtrl : MonoBehaviour
     {
         animLibro.SetBool("abierto", true);
         animLibro.gameObject.SetActive(true);
+        for (int i = 0; i < objetosLibro.Length; i++)
+        {
+            objetosLibro[i].SetActive(true);
+        }
         bookActive = true;
         ActualizarTexto();
     }
@@ -89,6 +94,10 @@ public class BookUICtrl : MonoBehaviour
     public void CloseBook()
     {
         animLibro.SetBool("abierto", false);
+		for (int i = 0; i < objetosLibro.Length; i++)
+		{
+            objetosLibro[i].SetActive(false);
+		}
         StartCoroutine(OcultarModelo());
     }
 
