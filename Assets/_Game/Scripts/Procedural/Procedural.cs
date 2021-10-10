@@ -12,6 +12,11 @@ public class Procedural : MonoBehaviour
     public Vector2 distancias;
     public Transform jugador;
     public Transform posLlave;
+    public Transform posPuerta;
+    public int[] posLlaveDos;
+    public int[] posPuertaDos;
+    public Habitación habPuerta;
+    public Habitación habLlave;
     public GameObject cuarto;
     public string nombre;
     public int nombreSemilla;
@@ -22,9 +27,9 @@ public class Procedural : MonoBehaviour
     }
 
     void Update(){
-        if (Input.GetKeyDown(KeyCode.Space)){
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+      /*  if (Input.GetKeyDown(KeyCode.Space)){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name); //Codigo para crear un punto nuevamente
+        }*/
     }
 
     public void crearMundo(){
@@ -36,12 +41,14 @@ public class Procedural : MonoBehaviour
         CrearHabitaciones();
     }
 
-    void TrazarRuta(){
+    void TrazarRuta()
+    {
         int puntoInicio = Aleatorio(0, x);   //acá usariamos la semilla CAMBIAR     
         int puntoFinal = Aleatorio(0, x);
 
         int[] puntoFlotante = { puntoInicio, z - 1 };
-        while (!(puntoFlotante[0] == puntoFinal && puntoFlotante[1] == 0)){ //sigo moviendo hasta encontrar la meta
+        while (!(puntoFlotante[0] == puntoFinal && puntoFlotante[1] == 0))
+        { //sigo moviendo hasta encontrar la meta
             int movimiento;
             bool repetir = false;
             do
@@ -49,13 +56,17 @@ public class Procedural : MonoBehaviour
                 repetir = false;
                 movimiento = Aleatorio(1, 4);
 
-                if (movimiento == 1) { //movimiento a la derecha
+                if (movimiento == 1)
+                { //movimiento a la derecha
                     puntoFlotante[0]++;
-                    if (puntoFlotante[0] >= x){
+                    if (puntoFlotante[0] >= x)
+                    {
                         puntoFlotante[0]--;
                         repetir = true;
                     }
-                } else if (movimiento==2){//movimiento abajo
+                }
+                else if (movimiento == 2)
+                {//movimiento abajo
                     puntoFlotante[1]--;
                     if (puntoFlotante[1] < 0)
                     {
@@ -63,7 +74,8 @@ public class Procedural : MonoBehaviour
                         repetir = true;
                     }
                 }
-                else if (movimiento == 3){//movimiento izquierda
+                else if (movimiento == 3)
+                {//movimiento izquierda
                     puntoFlotante[0]--;
                     if (puntoFlotante[0] < 0)
                     {
@@ -76,24 +88,29 @@ public class Procedural : MonoBehaviour
             matrizJuego[puntoFlotante[0], puntoFlotante[1]] = 3;
         }
 
-        int[] llave = { Aleatorio(0, x), Aleatorio(0, z-1) }; //genero una posicion para la llave
+        int[] llave = { Aleatorio(0, x), Aleatorio(0, z - 1) }; //genero una posicion para la llave
         matrizJuego[llave[0], llave[1]] = 4;
 
-        if (ValorHabitaciones(llave[0],llave[1])==0){//creo habitacion con llave
+        if (ValorHabitaciones(llave[0], llave[1]) == 0)
+        {//creo habitacion con llave
             int col = -1;
-            for (int i = 0; i < x; i++){
-                if (matrizJuego[i,llave[1]] != 0 && i != llave[0]){
+            for (int i = 0; i < x; i++)
+            {
+                if (matrizJuego[i, llave[1]] != 0 && i != llave[0])
+                {
                     col = i;
                     break;
                 }
             }
             if (col > llave[0])
             {
-                for (int i = llave[0]+1; i < col; i++)
+                for (int i = llave[0] + 1; i < col; i++)
                 {
                     matrizJuego[i, llave[1]] = 3;
                 }
-            } else {
+            }
+            else
+            {
                 for (int i = col; i < llave[0]; i++)
                 {
                     matrizJuego[i, llave[1]] = 3;
@@ -105,7 +122,10 @@ public class Procedural : MonoBehaviour
         matrizJuego[puntoFinal, 0] = 2;
 
         jugador.position = new Vector3(puntoInicio * distancias.x, 0.5f, (z - 1) * distancias.y); //llevo al jugador a la habitacion inicial
-        posLlave.position = new Vector3(llave[0] * distancias.x, 0.5f, llave[1] * distancias.y);
+        posLlave.position = new Vector3(llave[0] * distancias.x, 0.5f, llave[1] * distancias.y); // ubico la llave en el cuarto
+        posPuerta.position = new Vector3(puntoFinal * distancias.x, 0f, 0);
+        posPuertaDos =new int[] { puntoFinal, 0 };
+        posLlaveDos = llave;
     }
 
     private void OnDrawGizmos(){
@@ -154,6 +174,12 @@ public class Procedural : MonoBehaviour
                 if (matrizJuego[i,j]!=0){
                     GameObject objetoCuarto = Instantiate(cuarto, new Vector3(i * distancias.x, 0, j * distancias.y), Quaternion.identity) as GameObject;
                     objetoCuarto.GetComponent<Habitaciones>().Inicializar(matrizBloques[i,j]);
+                    if (posPuertaDos[0] == i && posPuertaDos[1] == j){
+                        habPuerta = objetoCuarto.GetComponentInChildren<Habitación>();
+                    }
+                    if (posLlaveDos[0] == i && posLlaveDos[1] == j){
+                        habLlave = objetoCuarto.GetComponentInChildren<Habitación>();
+                    }
                 }
             }
         }
