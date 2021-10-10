@@ -12,6 +12,7 @@ public class BookUICtrl : MonoBehaviour
     public int currentPage;
     public Animator animLibro;
     public GameObject[] objetosLibro;
+    public GameObject minimap;
 
     public bool bookActive = false;
 
@@ -88,6 +89,7 @@ public class BookUICtrl : MonoBehaviour
             objetosLibro[i].SetActive(true);
         }
         bookActive = true;
+        minimap.SetActive(false);
         ActualizarTexto();
     }
 
@@ -97,7 +99,8 @@ public class BookUICtrl : MonoBehaviour
 		for (int i = 0; i < objetosLibro.Length; i++)
 		{
             objetosLibro[i].SetActive(false);
-		}
+        }
+        minimap.SetActive(true);
         StartCoroutine(OcultarModelo());
     }
 

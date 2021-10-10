@@ -439,6 +439,7 @@ MonoBehaviour:
   objetosLibro:
   - {fileID: 0}
   - {fileID: 0}
+  minimap: {fileID: 0}
   bookActive: 0
 --- !u!114 &3070832860446735148
 MonoBehaviour:

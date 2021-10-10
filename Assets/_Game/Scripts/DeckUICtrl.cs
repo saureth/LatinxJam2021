@@ -5,7 +5,7 @@ using UnityEngine;
 public class DeckUICtrl : MonoBehaviour
 {
     public static DeckUICtrl singleton;
-    public GameObject DeckPanel;
+    public Animator DeckPanel;
     private void Awake() {  
         if(singleton ==null){
             singleton = this;
@@ -16,11 +16,11 @@ public class DeckUICtrl : MonoBehaviour
     }
 
     public void ShowDeckUI(){
-        DeckPanel.SetActive(true);
+        DeckPanel.SetBool("visible", true);
     }
 
     public void ChooseCard(){
         DeckCtrl.singleton.TriggerAdventureCard();
-        DeckPanel.SetActive(false);
+        DeckPanel.SetBool("visible", false);
     }
 }
