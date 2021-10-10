@@ -53,7 +53,7 @@ public class Phrase {
 
     public string GetPhrase()
 	{
-        return GameCtrl.singleton.idioma == 0 ? GetSpanishPhrase() : GetEnglishPhrase();
+        return PlayerPrefs.GetInt("Lang") == 0 ? GetSpanishPhrase() : GetEnglishPhrase();
 	}
 
     public string GetSpanishPhrase(){
