@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2083562435439413242}
   m_Layer: 0
   m_Name: Repisa 1
-  m_TagString: Untagged
+  m_TagString: prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

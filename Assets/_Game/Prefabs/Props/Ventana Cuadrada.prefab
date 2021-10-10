@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 379646725966206807}
   m_Layer: 0
   m_Name: Ventana Cuadrada
-  m_TagString: Untagged
+  m_TagString: prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

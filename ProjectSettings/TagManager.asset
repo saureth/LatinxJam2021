@@ -8,6 +8,7 @@ TagManager:
   - DoorTrigger
   - Enemy
   - RoulettePanel
+  - prop
   layers:
   - Default
   - TransparentFX

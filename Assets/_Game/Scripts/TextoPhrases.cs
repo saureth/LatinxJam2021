@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TextoPhrases : MonoBehaviour
 {
     public Phrase frase;
+
     void Start()
     {
         GetComponent<Text>().text = frase.GetPhrase();        
