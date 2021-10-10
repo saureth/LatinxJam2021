@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
+    path: Assets/_Game/Scenes/Morion/Menu.unity
+    guid: 777f5c3a2bf29254b9c58dd2c42bc630
+  - enabled: 1
+    path: Assets/_Game/Scenes/Morion/GameOver.unity
+    guid: 4ce550514af35c94f94912f9611f4350
   m_configObjects: {}
