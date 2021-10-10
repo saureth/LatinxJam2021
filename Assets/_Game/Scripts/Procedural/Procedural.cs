@@ -210,8 +210,11 @@ public class Procedural : MonoBehaviour
         return r.Next(x, y);
     }
 
-    public void MostrarHabitacion(){
-        
+    public void MostrarHabitacionPuerta(){
+        habPuerta.ActivarPuerta();
+    }
+    public void MostrarHabitacionLlave(){
+        habLlave.ActivarLlave();
     }
 
 }
