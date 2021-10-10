@@ -22,7 +22,7 @@ public class DeckCtrl : MonoBehaviour
         
     }
 
-	private IEnumerator Start()
+	public IEnumerator IniciarBarajado()
 	{
         yield return new WaitForSeconds(0.5f);
         Shuffle();

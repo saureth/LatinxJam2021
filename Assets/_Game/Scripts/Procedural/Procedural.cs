@@ -183,6 +183,7 @@ public class Procedural : MonoBehaviour
                 }
             }
         }
+        StartCoroutine(DeckCtrl.singleton.IniciarBarajado());
     }
 
     public int saberSihayBloque(int _x, int _z){
@@ -208,5 +209,10 @@ public class Procedural : MonoBehaviour
         //int random = new Random();
         return r.Next(x, y);
     }
+
+    public void MostrarHabitacion(){
+        
+    }
+
 }
 
