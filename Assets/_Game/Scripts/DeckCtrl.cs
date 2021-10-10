@@ -64,7 +64,9 @@ public class DeckCtrl : MonoBehaviour
     }
 
     public void KeyRoomVisible(){
+        Procedural.singleton.MostrarHabitacionLlave();
     }
     public void DoorRoomVisible(){
+        Procedural.singleton.MostrarHabitacionPuerta();
     }
 }
