@@ -12,6 +12,8 @@ public class BookUICtrl : MonoBehaviour
     public int currentPage;
     public Animator animLibro;
 
+    public bool bookActive = false;
+
     private void Awake() 
     {
         if(singleton == null){
@@ -40,6 +42,30 @@ public class BookUICtrl : MonoBehaviour
         }
 	}
 
+    public Text CalculateWhereToWrite(){
+        return (BookCtrl.singleton.currentTexts.Count % 6 < 3) ? leftLeafUI: rightLeafUI;
+    }
+
+    public IEnumerator AddCharactersToUI(Phrase phrase){
+        ShowBookUI();
+        if((currentPage+1) * 6 <= BookCtrl.singleton.currentTexts.Count){
+            leftLeafUI.text ="";
+            rightLeafUI.text = "";
+        }
+        yield return new WaitForSeconds(1f);
+        bool finishAdding = false;
+        int charIndex = 0;
+        while(!finishAdding){
+            CalculateWhereToWrite().text += phrase.GetPhrase()[charIndex];
+            charIndex++;
+            yield return new WaitForSeconds(0.1f);
+            finishAdding = charIndex >= phrase.GetPhrase().Length;
+        }
+        BookCtrl.singleton.AddTextToList(phrase);
+        currentPage = Mathf.FloorToInt(BookCtrl.singleton.currentTexts.Count / 6);
+        ActualizarTexto();
+    }
+
     public void ShowHideBook()
 	{
 		if (animLibro.GetBool("abierto"))
@@ -56,22 +82,22 @@ public class BookUICtrl : MonoBehaviour
     {
         animLibro.SetBool("abierto", true);
         animLibro.gameObject.SetActive(true);
-        GameCtrl.singleton.pausado = true;
+        bookActive = true;
         ActualizarTexto();
     }
 
     public void CloseBook()
     {
         animLibro.SetBool("abierto", false);
-        GameCtrl.singleton.pausado = false;
         StartCoroutine(OcultarModelo());
     }
 
 
     IEnumerator OcultarModelo()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         animLibro.gameObject.SetActive(false);
+        bookActive = false;
     }
 
     public void PageUp(){

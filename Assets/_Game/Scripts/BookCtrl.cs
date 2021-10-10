@@ -16,15 +16,16 @@ public class BookCtrl : MonoBehaviour
             DestroyImmediate(this.gameObject);
         }
     }
-    public void AddTextToList(int phraseIndex){
-        Phrase nPhr = allTexts[phraseIndex];
-        currentTexts.Add(nPhr);
-    }
+    
 
     public void AddTextToList(string spanish, string english){
         Phrase nPhr = new Phrase(spanish,english);
         allTexts.Add(nPhr);
         currentTexts.Add(nPhr);
+    }
+
+    public void AddPhraseToBook(Phrase phrase){
+        StartCoroutine(BookUICtrl.singleton.AddCharactersToUI(phrase));
     }
 
     public void AddTextToList(Phrase f)
