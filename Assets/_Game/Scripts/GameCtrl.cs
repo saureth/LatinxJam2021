@@ -16,6 +16,10 @@ public class GameCtrl : MonoBehaviour
 
     public List<AudioClip> clips;
 
+    public AudioClip invisibleClip;
+
+    public int audioIndex = -1;
+
     void Awake()
     {
         if(singleton == null)
@@ -26,12 +30,22 @@ public class GameCtrl : MonoBehaviour
         {
             DestroyImmediate(this.gameObject);
         }
+        audioIndex = Random.Range(0,clips.Count);
         ChooseAndPlayAudio();
     }
 
+    public void ChangeMusicToInvisible(){
+        audioSource.clip = invisibleClip;
+        audioSource.Play();
+    }
+
+    public void ChangeMusicToRegular(){
+        audioSource.clip = clips[audioIndex];
+        audioSource.Play();
+    }
+
     private void ChooseAndPlayAudio(){
-        int place = Random.Range(0,clips.Count);
-        audioSource.clip = clips[place];
+        audioSource.clip = clips[audioIndex];
         audioSource.Play();
     }
 

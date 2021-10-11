@@ -51,11 +51,13 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public IEnumerator MakeInvisible(){
+        GameCtrl.singleton.ChangeMusicToInvisible();
         playerIsInvisible = true;
         volume.profile = invisibleProfile;
         yield return new WaitForSeconds(invisibleTime);
         volume.profile = visibleProfile;
         playerIsInvisible = false;    
+        GameCtrl.singleton.ChangeMusicToRegular();
     }
     
 }
