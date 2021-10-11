@@ -288,6 +288,11 @@ MonoBehaviour:
   movementSpeed: 1
   rotationSpeed: 2
   rotation: {x: 0, y: 0, z: 0}
+  volume: {fileID: 0}
+  visibleProfile: {fileID: 0}
+  invisibleProfile: {fileID: 0}
+  playerIsInvisible: 0
+  invisibleTime: 5
 --- !u!54 &3583472360185123813
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -315,9 +320,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12173413
-  m_Height: 0.59621644
+  m_Height: 0.7
   m_Direction: 1
-  m_Center: {x: 0.009826586, y: 0.3022889, z: -0.0058959424}
+  m_Center: {x: 0.009826586, y: 0.35, z: -0.0058959424}
 --- !u!114 &3278410556792318126
 MonoBehaviour:
   m_ObjectHideFlags: 0

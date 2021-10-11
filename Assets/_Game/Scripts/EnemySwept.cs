@@ -9,6 +9,8 @@ public class EnemySwept : MonoBehaviour
     public UnityEvent atacar;
 
     public static bool invisible;
+    public float tiempoVision = 0.8f;
+    float tiempo;
 
     // Update is called once per frame
     void Update()
@@ -20,9 +22,29 @@ public class EnemySwept : MonoBehaviour
         
         if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, distanciaVision))
         {
-            atacar.Invoke();
-        }
+			if (hit.collider.CompareTag("Player"))
+			{
+                tiempo += Time.deltaTime;
+			    if (tiempo > tiempoVision)
+			    {
+                    GameOver();
+			    }
+                print("Detectado en:" + tiempo);
+			}
+		}
+		else
+		{
+			if (tiempo > 0)
+			{
+                tiempo -= Time.deltaTime;
+			}
+		}
     }
+
+    public void GameOver()
+	{
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+	}
 
 	private void OnDrawGizmos()
 	{

@@ -815,6 +815,71 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3070832858657136708, guid: 6693e251704d66840a3203bed835526b,
+        type: 3}
+      propertyPath: adventureDeck.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3070832858657136708, guid: 6693e251704d66840a3203bed835526b,
+        type: 3}
+      propertyPath: adventureDeck.Array.data[0].phrase.englishPhrase
+      value: Enemies gets frozen for a few seconds
+      objectReference: {fileID: 0}
+    - target: {fileID: 3070832858657136708, guid: 6693e251704d66840a3203bed835526b,
+        type: 3}
+      propertyPath: adventureDeck.Array.data[0].phrase.spanishPhrase
+      value: 'Se congelan los enemigos por algunos segundos '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3070832858657136708, guid: 6693e251704d66840a3203bed835526b,
+        type: 3}
+      propertyPath: adventureDeck.Array.data[1].phrase.englishPhrase
+      value: You become invisible for n seconds
+      objectReference: {fileID: 0}
+    - target: {fileID: 3070832858657136708, guid: 6693e251704d66840a3203bed835526b,
+        type: 3}
+      propertyPath: adventureDeck.Array.data[1].phrase.spanishPhrase
+      value: Te haces invisible por n segundos
+      objectReference: {fileID: 0}
+    - target: {fileID: 3070832858657136708, guid: 6693e251704d66840a3203bed835526b,
+        type: 3}
+      propertyPath: adventureDeck.Array.data[2].phrase.englishPhrase
+      value: The key room appears on the minimap.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3070832858657136708, guid: 6693e251704d66840a3203bed835526b,
+        type: 3}
+      propertyPath: adventureDeck.Array.data[2].phrase.spanishPhrase
+      value: "La habitaci\xF3n de las llaves aparece en el minimapa."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3070832858657136708, guid: 6693e251704d66840a3203bed835526b,
+        type: 3}
+      propertyPath: adventureDeck.Array.data[3].phrase.englishPhrase
+      value: The door room appears on the minimap
+      objectReference: {fileID: 0}
+    - target: {fileID: 3070832858657136708, guid: 6693e251704d66840a3203bed835526b,
+        type: 3}
+      propertyPath: adventureDeck.Array.data[3].phrase.spanishPhrase
+      value: "La habitaci\xF3n de la puerta aparece en el minimapa."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3070832858657136708, guid: 6693e251704d66840a3203bed835526b,
+        type: 3}
+      propertyPath: adventureDeck.Array.data[0].myEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FreezeEnemies
+      objectReference: {fileID: 0}
+    - target: {fileID: 3070832858657136708, guid: 6693e251704d66840a3203bed835526b,
+        type: 3}
+      propertyPath: adventureDeck.Array.data[1].myEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BecomeInvisible
+      objectReference: {fileID: 0}
+    - target: {fileID: 3070832858657136708, guid: 6693e251704d66840a3203bed835526b,
+        type: 3}
+      propertyPath: adventureDeck.Array.data[2].myEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyRoomVisible
+      objectReference: {fileID: 0}
+    - target: {fileID: 3070832858657136708, guid: 6693e251704d66840a3203bed835526b,
+        type: 3}
+      propertyPath: adventureDeck.Array.data[3].myEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DoorRoomVisible
+      objectReference: {fileID: 0}
     - target: {fileID: 3070832858959418604, guid: 6693e251704d66840a3203bed835526b,
         type: 3}
       propertyPath: cuarto
