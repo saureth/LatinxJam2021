@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1394789484}
   m_LocalRotation: {x: -0.7071038, y: 0.00000047683704, z: 0.0000010877845, w: 0.70710987}
-  m_LocalPosition: {x: -0, y: -2.44, z: 7.6}
+  m_LocalPosition: {x: -0, y: -1.35, z: 6.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1614174533}
@@ -235,6 +235,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   A: {fileID: 1296965741315155225}
   B: {fileID: 1296965741768262131}
+  doll: {fileID: 6718594590558214270}
+  arrivalPoint: {x: 0, y: 0, z: 0}
+  speed: 0.4
   aventura:
     phrase:
       spanishPhrase: Siento que aparece un enemigo
@@ -242,6 +245,19 @@ MonoBehaviour:
     myEvent:
       m_PersistentCalls:
         m_Calls: []
+  "mu\xF1ecaAnim": {fileID: 517340535}
+  phrases:
+  - spanishPhrase: "Siento los pasos de otra mu\xF1eca, s\xE9 que viene a buscarme"
+    englishPhrase: I can hear the steps of another doll, I know she is coming to
+      catch me
+  - spanishPhrase: "Ahora s\xE9 que otra mu\xF1eca entr\xF3 a buscarme"
+    englishPhrase: Now I know another doll came looking for me
+  - spanishPhrase: "Siento que en una habitaci\xF3n, ahora, hay otra mu\xF1eca"
+    englishPhrase: I can feel it, in a room, now there is another doll
+  - spanishPhrase: "En alguna habitaci\xF3n, s\xE9 que entr\xF3 una mu\xF1eca m\xE1s"
+    englishPhrase: In some room, I know another doll came in
+  - spanishPhrase: "A la distancia siento que otra mu\xF1eca apareci\xF3."
+    englishPhrase: In the distance I can feel another doll appearing
 --- !u!1 &1296965741315155224
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,6 +377,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2219269228913266958}
+  - component: {fileID: 1178454969}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -382,6 +399,24 @@ Transform:
   m_Father: {fileID: 4070035404602852151}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -11.1, z: 0}
+--- !u!114 &1178454969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9103755011439980515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1e058c414605647bd5f744af71e2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anguloBarrido: 24
+  distanciaVision: 2.5
+  atacar:
+    m_PersistentCalls:
+      m_Calls: []
+  tiempoVision: 0.15
 --- !u!1001 &6536842176962772885
 PrefabInstance:
   m_ObjectHideFlags: 0
