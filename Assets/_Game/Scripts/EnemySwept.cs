@@ -18,7 +18,7 @@ public class EnemySwept : MonoBehaviour
         if (PlayerMovement.singleton.playerIsInvisible) return;
          RaycastHit hit;
 
-         transform.localEulerAngles = Vector3.up * anguloBarrido * Mathf.Sin(Time.time*5);
+         transform.localEulerAngles = Vector3.up * anguloBarrido * Mathf.Sin(Time.time*3f);
         
         if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, distanciaVision))
         {
