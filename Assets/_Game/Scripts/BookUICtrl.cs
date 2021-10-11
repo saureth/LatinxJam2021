@@ -70,6 +70,7 @@ public class BookUICtrl : MonoBehaviour
 
     public void ShowHideBook()
 	{
+        GameCtrl.singleton.PlayBookLeafSound();
 		if (animLibro.GetBool("abierto"))
 		{
             CloseBook();
