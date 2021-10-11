@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2618965502458517516}
   - component: {fileID: 5025440581739656235}
   - component: {fileID: 3316207295850048216}
+  - component: {fileID: -1816286524687971246}
   m_Layer: 0
   m_Name: Cajas 2
   m_TagString: prop
@@ -107,3 +108,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9847261, y: 1.5536166, z: 0.92242926}
   m_Center: {x: 4.2837863, y: 0.77312875, z: -3.5888095}
+--- !u!114 &-1816286524687971246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927561350888335400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b7fa35dd9a5c554692ef309c701bb1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  probActivarObj: 0.45

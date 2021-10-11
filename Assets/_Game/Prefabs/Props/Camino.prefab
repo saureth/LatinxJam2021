@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6857807450148165854}
   - component: {fileID: 4051226976267122487}
   - component: {fileID: 7452254642760793898}
+  - component: {fileID: -2920539757874512014}
   m_Layer: 0
   m_Name: Camino
   m_TagString: prop
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-2920539757874512014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7291903445237438722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b7fa35dd9a5c554692ef309c701bb1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  probActivarObj: 0.45

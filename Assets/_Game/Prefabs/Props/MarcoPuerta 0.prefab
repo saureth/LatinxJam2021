@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3377684928652103938}
   - component: {fileID: 7913988108649652497}
   - component: {fileID: 7017665043263381019}
+  - component: {fileID: -8549903441224163037}
   m_Layer: 0
   m_Name: MarcoPuerta 0
   m_TagString: prop
@@ -107,3 +108,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5291395, y: 2.3000143, z: 0.23425281}
   m_Center: {x: -4.4776607, y: 1.0019838, z: 0.799373}
+--- !u!114 &-8549903441224163037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7824148346766568650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b7fa35dd9a5c554692ef309c701bb1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  probActivarObj: 0.45
