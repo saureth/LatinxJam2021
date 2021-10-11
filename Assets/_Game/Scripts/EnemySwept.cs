@@ -13,7 +13,7 @@ public class EnemySwept : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (PlayerMovement.singleton.playerIsInvisible) return;
+        if (PlayerMovement.singleton.playerIsInvisible) return;
          RaycastHit hit;
 
          transform.localEulerAngles = Vector3.up * anguloBarrido * Mathf.Sin(Time.time*5);
