@@ -14,6 +14,8 @@ public class GameCtrl : MonoBehaviour
 
     public AudioSource audioSource;
 
+    public List<AudioClip> clips;
+
     void Awake()
     {
         if(singleton == null)
@@ -24,6 +26,8 @@ public class GameCtrl : MonoBehaviour
         {
             DestroyImmediate(this.gameObject);
         }
+        int place = Random.Range(0,clips.Count);
+        audioSource.clip = clips[place];
         audioSource.Play();
     }
 
