@@ -20,6 +20,7 @@ public class DeckUICtrl : MonoBehaviour
     }
 
     public void ChooseCard(){
+        GameCtrl.singleton.PlayCardFlipSound();
         DeckCtrl.singleton.TriggerAdventureCard();
         DeckPanel.SetBool("visible", false);
     }

@@ -12,9 +12,17 @@ public class GameCtrl : MonoBehaviour
 
     public bool pausado = false;
 
-    [Header("Roulette control stuff")]
-    public float            rouletteShowingTime= 2f;
-    public GameObject       roulettePanel;
+    public AudioSource musicAudioSource;
+    public AudioSource effectAudioSource;
+
+    public List<AudioClip> musicClips;
+
+    public AudioClip invisibleClip;
+
+    public AudioClip bookLeafClip;
+    public AudioClip cardFlipClip;
+
+    public int audioIndex = -1;
 
     void Awake()
     {
@@ -26,6 +34,34 @@ public class GameCtrl : MonoBehaviour
         {
             DestroyImmediate(this.gameObject);
         }
+        audioIndex = Random.Range(0,musicClips.Count);
+        ChooseAndPlayAudio();
+    }
+
+    public void PlayBookLeafSound(){
+        effectAudioSource.clip = bookLeafClip;
+        effectAudioSource.Play();
+    }
+
+    public void PlayCardFlipSound(){
+        effectAudioSource.clip = cardFlipClip;
+        effectAudioSource.Play();
+    }
+
+
+    public void ChangeMusicToInvisible(){
+        musicAudioSource.clip = invisibleClip;
+        musicAudioSource.Play();
+    }
+
+    public void ChangeMusicToRegular(){
+        musicAudioSource.clip = musicClips[audioIndex];
+        musicAudioSource.Play();
+    }
+
+    private void ChooseAndPlayAudio(){
+        musicAudioSource.clip = musicClips[audioIndex];
+        musicAudioSource.Play();
     }
 
 
