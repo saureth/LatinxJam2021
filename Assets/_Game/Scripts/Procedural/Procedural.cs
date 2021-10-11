@@ -22,6 +22,17 @@ public class Procedural : MonoBehaviour
     public int nombreSemilla;
     public System.Random r;
 
+    public static Procedural singleton;
+
+    private void Awake() {
+        if(singleton == null){
+            singleton = this;
+        }
+        else {
+            DestroyImmediate(this.gameObject);
+        }
+    }
+
     void Start(){
         crearMundo();
     }
@@ -210,8 +221,11 @@ public class Procedural : MonoBehaviour
         return r.Next(x, y);
     }
 
-    public void MostrarHabitacion(){
-        
+    public void MostrarHabitacionPuerta(){
+        habPuerta.ActivarPuerta();
+    }
+    public void MostrarHabitacionLlave(){
+        habLlave.ActivarLlave();
     }
 
 }
