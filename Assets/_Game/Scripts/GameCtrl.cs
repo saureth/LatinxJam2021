@@ -20,6 +20,7 @@ public class GameCtrl : MonoBehaviour
     public AudioClip invisibleClip;
 
     public AudioClip bookLeafClip;
+    public AudioClip cardFlipClip;
 
     public int audioIndex = -1;
 
@@ -41,6 +42,12 @@ public class GameCtrl : MonoBehaviour
         effectAudioSource.clip = bookLeafClip;
         effectAudioSource.Play();
     }
+
+    public void PlayCardFlipSound(){
+        effectAudioSource.clip = cardFlipClip;
+        effectAudioSource.Play();
+    }
+
 
     public void ChangeMusicToInvisible(){
         musicAudioSource.clip = invisibleClip;
