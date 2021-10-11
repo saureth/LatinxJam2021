@@ -34,6 +34,8 @@ public class Procedural : MonoBehaviour
     }
 
     void Start(){
+
+        nombre = PlayerPrefs.GetString("nombre");
         crearMundo();
     }
 
