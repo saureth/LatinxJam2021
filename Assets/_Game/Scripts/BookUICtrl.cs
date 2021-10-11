@@ -133,6 +133,7 @@ public class BookUICtrl : MonoBehaviour
 
     IEnumerator Pasar()
 	{        
+        GameCtrl.singleton.PlayBookLeafSound();
         animLibro.SetTrigger("pasar");
         yield return new WaitForSeconds(1f);
         ActualizarTexto();

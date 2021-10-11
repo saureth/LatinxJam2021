@@ -12,11 +12,14 @@ public class GameCtrl : MonoBehaviour
 
     public bool pausado = false;
 
-    public AudioSource audioSource;
+    public AudioSource musicAudioSource;
+    public AudioSource effectAudioSource;
 
-    public List<AudioClip> clips;
+    public List<AudioClip> musicClips;
 
     public AudioClip invisibleClip;
+
+    public AudioClip bookLeafClip;
 
     public int audioIndex = -1;
 
@@ -30,23 +33,28 @@ public class GameCtrl : MonoBehaviour
         {
             DestroyImmediate(this.gameObject);
         }
-        audioIndex = Random.Range(0,clips.Count);
+        audioIndex = Random.Range(0,musicClips.Count);
         ChooseAndPlayAudio();
     }
 
+    public void PlayBookLeafSound(){
+        effectAudioSource.clip = bookLeafClip;
+        effectAudioSource.Play();
+    }
+
     public void ChangeMusicToInvisible(){
-        audioSource.clip = invisibleClip;
-        audioSource.Play();
+        musicAudioSource.clip = invisibleClip;
+        musicAudioSource.Play();
     }
 
     public void ChangeMusicToRegular(){
-        audioSource.clip = clips[audioIndex];
-        audioSource.Play();
+        musicAudioSource.clip = musicClips[audioIndex];
+        musicAudioSource.Play();
     }
 
     private void ChooseAndPlayAudio(){
-        audioSource.clip = clips[audioIndex];
-        audioSource.Play();
+        musicAudioSource.clip = musicClips[audioIndex];
+        musicAudioSource.Play();
     }
 
 
