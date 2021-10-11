@@ -26,6 +26,10 @@ public class GameCtrl : MonoBehaviour
         {
             DestroyImmediate(this.gameObject);
         }
+        ChooseAndPlayAudio();
+    }
+
+    private void ChooseAndPlayAudio(){
         int place = Random.Range(0,clips.Count);
         audioSource.clip = clips[place];
         audioSource.Play();
