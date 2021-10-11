@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8880041010133757319}
   - component: {fileID: 5960452989339018013}
   - component: {fileID: 7660571750567414238}
+  - component: {fileID: 6086223172146526966}
   m_Layer: 0
   m_Name: Silla 1
   m_TagString: prop
@@ -93,3 +94,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.0000007, y: 2.2369869, z: 2.0000005}
   m_Center: {x: -1.3474977, y: 0.8380705, z: 13.191455}
+--- !u!114 &6086223172146526966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287518210878413762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b7fa35dd9a5c554692ef309c701bb1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  probActivarObj: 0.45

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1212,6 +1212,7 @@ GameObject:
   - component: {fileID: 524744210}
   - component: {fileID: 524744209}
   - component: {fileID: 524744208}
+  - component: {fileID: 524744212}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -1297,7 +1298,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 524744210}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 524744212}
+        m_MethodName: CargarEscena
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Mundo
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &524744210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1336,6 +1348,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524744206}
   m_CullTransparentMesh: 0
+--- !u!114 &524744212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524744206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b821babe7ca004b8f6c0bc688aece5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &549994256
 GameObject:
   m_ObjectHideFlags: 0
@@ -2882,7 +2906,18 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2096152762}
+        m_MethodName: GuardarNombre
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
@@ -3094,6 +3129,7 @@ GameObject:
   - component: {fileID: 2010443125}
   - component: {fileID: 2010443124}
   - component: {fileID: 2010443123}
+  - component: {fileID: 2010443127}
   m_Layer: 5
   m_Name: btnExit
   m_TagString: Untagged
@@ -3178,7 +3214,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2010443125}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2010443127}
+        m_MethodName: SalirJuego
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2010443125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3217,6 +3264,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2010443121}
   m_CullTransparentMesh: 0
+--- !u!114 &2010443127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010443121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b821babe7ca004b8f6c0bc688aece5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2045637884
 GameObject:
   m_ObjectHideFlags: 0
@@ -3358,6 +3417,7 @@ GameObject:
   - component: {fileID: 2096152761}
   - component: {fileID: 2096152760}
   - component: {fileID: 2096152759}
+  - component: {fileID: 2096152762}
   m_Layer: 5
   m_Name: im1 (1)
   m_TagString: Untagged
@@ -3426,6 +3486,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 506.73132, y: 290.45367}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2096152762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096152758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6988d7278634fb43a18607e99470648, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  campoTextoNombre: {fileID: 1651381790}
 --- !u!1 &2100872187
 GameObject:
   m_ObjectHideFlags: 0

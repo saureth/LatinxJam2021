@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7473502704197936654}
   - component: {fileID: 4011349647219325424}
   - component: {fileID: 8999315045405896114}
+  - component: {fileID: 4281013391727564203}
   m_Layer: 0
   m_Name: Tapete
   m_TagString: prop
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &4281013391727564203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045513532459906789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b7fa35dd9a5c554692ef309c701bb1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  probActivarObj: 0.45

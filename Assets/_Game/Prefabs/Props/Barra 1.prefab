@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5080400538465808987}
   - component: {fileID: 1510865824358175284}
   - component: {fileID: 7610520388607951230}
+  - component: {fileID: 3253656801746365680}
   m_Layer: 0
   m_Name: Barra 1
   m_TagString: prop
@@ -93,3 +94,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.713185, y: 2.0116043, z: 2.235923}
   m_Center: {x: -4.5430436, y: 1.0021229, z: -3.0545783}
+--- !u!114 &3253656801746365680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4622810901026296955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b7fa35dd9a5c554692ef309c701bb1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  probActivarObj: 0.45

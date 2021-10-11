@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1649800536070027822}
   - component: {fileID: 4324599643932534453}
   - component: {fileID: 3857675745045942227}
+  - component: {fileID: 4169430089226882527}
   m_Layer: 0
   m_Name: Mesa
   m_TagString: prop
@@ -80,6 +81,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &4169430089226882527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2281704177708869574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b7fa35dd9a5c554692ef309c701bb1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  probActivarObj: 0.45
 --- !u!1 &5466825696013610295
 GameObject:
   m_ObjectHideFlags: 0

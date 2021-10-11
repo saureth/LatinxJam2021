@@ -9,4 +9,8 @@ public class Escenas : MonoBehaviour
 	{
 		SceneManager.LoadScene(nombre);
 	}
+	public void SalirJuego(){
+		Application.Quit();
+	}
+
 }

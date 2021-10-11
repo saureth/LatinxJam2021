@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4434309519332486633}
   - component: {fileID: 2596593248454598954}
   - component: {fileID: 208460159666330087}
+  - component: {fileID: -5451932636969931948}
   m_Layer: 0
   m_Name: Ventana 1
   m_TagString: prop
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-5451932636969931948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2810239607407213900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b7fa35dd9a5c554692ef309c701bb1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  probActivarObj: 0.45

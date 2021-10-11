@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8408397580946600191}
   - component: {fileID: 2065131119157919713}
   - component: {fileID: 4951142526894177180}
+  - component: {fileID: -5794945373781136359}
   m_Layer: 0
   m_Name: Repisa
   m_TagString: prop
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-5794945373781136359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4182005684479319692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b7fa35dd9a5c554692ef309c701bb1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  probActivarObj: 0.45
