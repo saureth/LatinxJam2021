@@ -12,9 +12,7 @@ public class GameCtrl : MonoBehaviour
 
     public bool pausado = false;
 
-    [Header("Roulette control stuff")]
-    public float            rouletteShowingTime= 2f;
-    public GameObject       roulettePanel;
+    public AudioSource audioSource;
 
     void Awake()
     {
@@ -26,6 +24,7 @@ public class GameCtrl : MonoBehaviour
         {
             DestroyImmediate(this.gameObject);
         }
+        audioSource.Play();
     }
 
 
